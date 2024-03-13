@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karabo Seekoei's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       
+        <nav>   
+            <!-- <a href="#">Home</a> -->
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="about-me">
+            <h1>Hey, I'm Karabo</h1>
+            <p>Welcome to my portfolio!</p>
+                <p>I am a dedicated student at WeThinkCode_, mastering programming languages like Python, Java, HTML, and C#. My academic journey focuses on acquiring versatile skills and understanding tech principles. This portfolio showcases my projects and proficiency.
+                I'm passionate about applying technology to real-world scenarios and seek opportunities to make a meaningful impact. 
+                Explore my portfolio to witness my dedication.
+                Let's connect and explore the endless possibilities of technology together!</p>
+        </div>
+    </div>
+
+    <div id="date-time"></div>
+    
+
+    
+
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            var now = new Date();
+            var date = now.toDateString();
+            var time = now.toLocaleTimeString();
+            var dateTimeString = date + " | " + time;
+            document.getElementById("date-time").textContent = dateTimeString;
+        }
+
+        // Update date and time immediately when the page loads
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
+   
+</body>
+</html>
