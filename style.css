@@ -1,114 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Text color */
+    margin: 0; /* Remove default margin */
+    padding: 0;
+    background-color: #121212; /* Dark background color */
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #0a0a0a;
-            margin: 0;
-            padding: 100px;
-            background-color: rgb(18, 16, 16);
-            background-size: cover;
-            /* background-image: url("Untitled\ design.png"); */
-        }
+header {
+    background-color: #343a40; /* Darker background color for header */
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0; /* Position header at the top */
+}
 
-        header {
-            text-align: left;
-            padding: 20px;
-        }
+nav {
+    text-align: right;
+    margin-right: 20px; /* Adjust the margin to move the navigation to the right */
+}
 
-        nav {
-            text-align: right;
-            padding: 10px 0;
-            margin-top: -20px; /* Adjusted margin-top */
-        }
+nav a {
+    color: #f0eaea;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: color 0.3s;
+}
 
-        nav a {
-            color: #f0eaea;
-            text-decoration: none;
-            padding: 0 10px;
-        }
+nav a:hover {
+    color: #ffffff;
+}
 
-        .container {
-            max-width: 800px;
-            margin-left: auto;
-            padding: 20px;
-            animation: slideIn 1s ease-out;
-            display: flex;
-            flex-direction:column-reverse;
-            align-items: center;
-        }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 20px 20px;
+    border-radius: 0 0 10px 10px; /* Apply border-radius to the bottom left and right corners */
+    background-color: #121212; /* Add background color to match the body background */
+}
 
-        .profile-img {
-            width: 200px;
-            margin-left: 20px;
-            animation: fadeIn 1s ease-out;
-        }
 
-        .about-me {
-            flex-grow: 1;
-            text-align: left;
-            width: 100%;
-            font-family: Georgia, serif; /* Set font to Georgia */
-            color: #fdf7f7; /* Change text color to brown */
-            font-size: large;
-        }
+.profile-picture {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    margin: 0 auto 20px;
+    display: block;
+}
 
-        #date-time {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-            color: hsl(0, 17%, 93%);
-        }
-        .circle {
-            width: 200px; /* Adjust the size as needed */
-            height: 200px; /* Adjust the size as needed */
-            /* overflow: hidden; */
-            text-align: left;
-            border-radius: 0%; /* Creates a circular shape */
-            margin: 20px; /* Example margin */
-        }
-        
-        .circle img {
-            width: 100%; /* Ensures the image fills the container */
-            height: 100%; /* Ensures the image fills the container */
-            object-fit: cover; /* Ensures the image covers the entire container */
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.about-me {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff; /* Text color */
+    line-height: 1.6;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+#date-time {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff; /* Text color */
+}
 
-        @keyframes underlineMotion {
-            0% {
-                text-decoration: underline;
-                transform: translateX(0);
-            }
-            50% {
-                text-decoration: none;
-                transform: translateX(5px);
-            }
-            100% {
-                text-decoration: underline;
-                transform: translateX(0);
-            }
-        }
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+        margin-right: 0; /* Remove the right margin on smaller screens */
+    }
 
-        h1 span,
-        footer span {
-            /* animation: underlineMotion 2s linear infinite; */
-            position: center;
-        }
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
+}
