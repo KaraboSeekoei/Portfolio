@@ -3,52 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Your custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
+    <style>
+        body {
+            background-image: url('portfolio_background.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            padding: 20px 0;
+            background: transparent;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #f1f1f1;
+            border-bottom: 2px solid white;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 100px;
+        }
+        .message-column {
+            max-width: 600px;
+            text-align: left;
+            margin-right: 30px;
+        }
+        .about-me h1 {
+            font-size: 3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .about-me p {
+            font-size: 1.6em; /* Increased font size for better readability */
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 3s ease-out forwards; /* Apply animation */
+        }
+        .image-container {
+            max-width: 350px;
+            width: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .name {
+            font-size: 2.5em; /* Original size of the name */
+            font-weight: bold;
+            color: white;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Fade-in animation for paragraphs */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <!-- Toggler/collapsibe Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Navbar links -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Main.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projects.html">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="about-me">
-            <h1>About me</h1>
-            <p>My name is Karabo Seekoei and I am a full-time software engineer.</p>
-            <p>I'm a passionate software engineer with a knack for programming. With 1 year of experience in the field, I've had the privilege of working on various projects and collaborating with diverse teams.</p>
-            <p>My journey in software engineering has equipped me with a strong foundation in Algorithms, GitHub, Python, and others. I thrive in environments that challenge me to think creatively and solve complex problems.</p>
-            <p>Outside of work, you'll often find me playing chess, contributing in and listening to good music. I believe that I am a hardworking person and very , and I strive to incorporate this mindset into everything I do, whether it's crafting innovative solutions or fostering meaningful connections with colleagues and clients.</p>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="Main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Name in top left corner -->
+    <div class="name">Karabo Seekoei</div>
+
+    <!-- About Me Section -->
+    <div class="content">
+        <div class="message-column">
+            <h1>About Me</h1>
+            <p>I'm a software engineer with 1 year of experience, specializing in programming, Algorithms, GitHub, and Python. I enjoy tackling challenges and solving complex problems in creative ways.</p>
+            <p>Outside of work, I play chess, listen to music, and strive to bring a hardworking mindset to everything I do, from crafting solutions to building meaningful relationships.</p>
+        </div>
+
+        <!-- Profile Image Section -->
+        <div class="image-container">
+            <img src="MyPic.png" alt="Karabo">
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
