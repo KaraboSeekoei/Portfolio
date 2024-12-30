@@ -5,75 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <style>
-        /* Set background image */
         body {
             background-image: url('portfolio_background.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            font-family: 'Times New Roman', Times, serif; /* Set the font to Times New Roman */
+            font-family: 'Times New Roman', Times, serif;
             color: white;
-            height: 100vh;
             margin: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Align items to the top */
+            justify-content: center;
+            align-items: center;
             padding: 20px;
+            text-align: center;
         }
-
-        /* Navigation links in a horizontal layout, aligned to the right */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            padding: 20px 0;
+            background: transparent;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.2em;
+        }
         .nav-links {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end; /* Align links to the right */
-            width: 100%;
         }
-
         .nav-links li {
-            font-size: 1.5em;
-            margin: 0 15px; /* Spacing between links */
+            margin: 0 15px;
         }
-
         .nav-links a {
-            text-decoration: none;
             color: white;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
         }
-
         .nav-links a:hover {
             color: #f1f1f1;
+            border-bottom: 2px solid white;
         }
-
-        /* Remove background color from the nav bar */
-        nav {
-            background: transparent; /* Make the navbar background transparent */
-        }
-
-        /* Content Section (empty for now), no background color */
         .content {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px; /* Optional: add some space between the navbar and content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 100px;
+        }
+        .message-column {
+            max-width: 600px;
+            text-align: left;
+            margin-right: 30px;
+        }
+        .welcome-message {
+            font-size: 3.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            animation: slideIn 2s ease-out;
+        }
+        .intro-message {
+            font-size: 1.4em;
+            color: white;
+            margin-top: 0;
+            opacity: 0.8;
+            font-weight: normal;
+            animation: fadeIn 3s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+            position: fixed;
+            top: 20px;
+            left: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Links -->
     <nav>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="Main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Content Section (empty for now) -->
+    <div class="name">Karabo Seekoei</div>
+
     <div class="content">
-        <!-- Start adding your content here -->
+        <div class="message-column">
+            <div class="welcome-message">
+                Welcome to My Digital World
+            </div>
+            <div class="intro-message">
+                I’m Karabo, a software engineer passionate about crafting innovative and efficient solutions. Let's build something amazing together!
+            </div>
+        </div>
     </div>
 
 </body>
