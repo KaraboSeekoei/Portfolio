@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Your Portfolio</title>
     <style>
         body {
-            background-image: url('portfolio_background.jpg'); /* Replace with your image URL */
+            background-image: url('portfolio_background.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -52,7 +52,7 @@
         .content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             max-width: 1200px;
             margin-top: 100px;
@@ -62,47 +62,44 @@
             text-align: left;
             margin-right: 30px;
         }
-        .about-me h1 {
-            font-size: 3em;
+        .welcome-message {
+            font-size: 3.5em;
             font-weight: bold;
             text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
             margin-bottom: 20px;
+            animation: slideIn 2s ease-out;
         }
-        .about-me p {
-            font-size: 1.6em; /* Increased font size for better readability */
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0; /* Initially hidden */
-            animation: fadeIn 3s ease-out forwards; /* Apply animation */
+        .intro-message {
+            font-size: 1.4em;
+            color: white;
+            margin-top: 0;
+            opacity: 0.8;
+            font-weight: normal;
+            animation: fadeIn 3s ease-out;
         }
-        .image-container {
-            max-width: 350px;
-            width: 100%;
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
-        .image-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         .name {
-            font-size: 2.5em; /* Original size of the name */
+            font-size: 2.5em;
             font-weight: bold;
             color: white;
             position: fixed;
             top: 20px;
             left: 20px;
         }
-
-        /* Fade-in animation for paragraphs */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <ul class="nav-links">
             <li><a href="Main.html">Home</a></li>
@@ -112,20 +109,16 @@
         </ul>
     </nav>
 
-    <!-- Name in top left corner -->
     <div class="name">Karabo Seekoei</div>
 
-    <!-- About Me Section -->
     <div class="content">
         <div class="message-column">
-            <h1>About Me</h1>
-            <p>I'm a software engineer with 1 year of experience, specializing in programming, Algorithms, GitHub, and Python. I enjoy tackling challenges and solving complex problems in creative ways.</p>
-            <p>Outside of work, I play chess, listen to music, and strive to bring a hardworking mindset to everything I do, from crafting solutions to building meaningful relationships.</p>
-        </div>
-
-        <!-- Profile Image Section -->
-        <div class="image-container">
-            <img src="MyPic.png" alt="Karabo">
+            <div class="welcome-message">
+                Welcome to My Digital World
+            </div>
+            <div class="intro-message">
+                I’m Karabo, a software engineer passionate about crafting innovative and efficient solutions. Let's build something amazing together!
+            </div>
         </div>
     </div>
 
