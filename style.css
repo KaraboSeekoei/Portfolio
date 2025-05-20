@@ -8,15 +8,30 @@
 #navigation-bar {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
+  margin-right: 60px;  /* Same as h1/h2 */
 }
 
 #navigation-bar a {
   font-size: 20px;
   text-decoration: none;
   color: #ffffff;
-  padding: 0 20px;
+  padding: 0 15px;
+  transition: color 0.3s ease;
 }
+
+/* On hover and focus, turn gold */
+#navigation-bar a:hover,
+#navigation-bar a:focus {
+  color: #ffcc00;
+  outline: none; /* remove focus outline if you want */
+}
+
+/* On click (active), stay gold */
+#navigation-bar a:active {
+  color: #ffcc00;
+}
+
 
 /* Heading 1 - Your name */
 h1 {
@@ -32,15 +47,17 @@ h1 {
   text-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
 }
 
-/* Heading 2 - Role (animated fade to gold) */
+/* Heading 2 - Role (aligned with h1) */
 h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   color: white;
   text-align: right;
-  padding-right: 30px;
+  padding-right: 35px;  /* Match h1 */
+  margin-right: 60px;   /* Match h1 */
   animation: h2FadeToGold 3s ease forwards;
 }
+
 
 @keyframes h2FadeToGold {
   from {
