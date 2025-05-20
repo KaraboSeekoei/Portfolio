@@ -93,13 +93,15 @@ h2 {
 /* Paragraph */
 .side-by-side p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1.6rem;       /* slightly bigger */
+  color: #f0e6d2;          /* elegant off-white / cream */
   max-width: 600px;
   margin: 0;
   padding-right: 30px;
   text-align: right;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 /* Image fade-in */
@@ -109,3 +111,18 @@ h2 {
     transform: scale(1);
   }
 }
+.about-text {
+  max-width: 800px;
+  margin: 40px 60px;
+  font-size: 0.2em; /* Much smaller now */
+  color: white;
+  line-height: 1.5;
+  font-family: 'Playfair Display', serif;
+  text-align: right;
+}
+
+.about-text p {
+  text-align: left;
+}
+
+
