@@ -32,14 +32,13 @@
   color: #ffcc00;
 }
 
-
 /* Heading 1 - Your name */
 h1 {
   font-family: 'Playfair Display', serif;
   color: #faf9f3;
   text-align: right;
   padding-right: 30px;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   border-right: 5px solid #ffcc00;
   padding-right: 35px;
@@ -51,13 +50,13 @@ h1 {
 h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
+  font-size: 1.4rem;
   color: white;
   text-align: right;
   padding-right: 35px;  /* Match h1 */
-  margin-right: 60px;   /* Match h1 */
+  margin: 0 60px 10px 0;    /* Match h1 */
   animation: h2FadeToGold 3s ease forwards;
 }
-
 
 @keyframes h2FadeToGold {
   from {
@@ -70,6 +69,7 @@ h2 {
 
 /* Image + paragraph container */
 .side-by-side {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,10 +93,10 @@ h2 {
 /* Paragraph */
 .side-by-side p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;       /* slightly bigger */
+  font-size: 1rem;       /* slightly bigger */
   color: #f0e6d2;          /* elegant off-white / cream */
   max-width: 600px;
-  margin: 0;
+  margin-top: 10px;
   padding-right: 30px;
   text-align: right;
   line-height: 1.7;
@@ -111,18 +111,205 @@ h2 {
     transform: scale(1);
   }
 }
-.about-text {
-  max-width: 800px;
-  margin: 40px 60px;
-  font-size: 0.2em; /* Much smaller now */
-  color: white;
-  line-height: 1.5;
+
+/* About section with two columns */
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 60px 60px;
   font-family: 'Playfair Display', serif;
-  text-align: right;
+  color: #f0e6d2;
+}
+.about-text img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 1.8s ease-out forwards;
+  margin-bottom: 20px; /* space between image and text */
+  display: inline-block;
 }
 
-.about-text p {
-  text-align: left;
+.about-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left; /* override your previous right-align for about-text paragraphs */
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat {
+  background-color: rgba(255, 204, 0, 0.05);
+  border-left: 4px solid #ffcc00;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #f0e6d2;
+}
+
+.stat a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.stat a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  background-color: #ffcc00; 
+  color: #222;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  margin-top: 40px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); 
+}
+
+/* Contact container is your form wrapper */
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto 80px auto;
+  padding: 0 60px;
+  font-family: 'Playfair Display', serif;
+  color: #f0e6d2;
+}
+
+/* New: Contact page two columns wrapper */
+.contact-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  max-width: 900px;
+  margin: 40px auto 80px auto;
+  padding: 0 60px;
+  font-family: 'Playfair Display', serif;
+  color: #f0e6d2;
+}
+
+/* Left column with your contact details */
+.contact-info {
+  border-left: 4px solid #ffcc00;
+  padding-left: 20px;
+  font-size: 1.1rem;
+}
+
+.contact-info h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+.no-left-line {
+  border-left: none !important;
+  padding-left: 0 !important;
 }
 
 
+.contact-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  text-decoration: underline;
+}
+
+/* Form container uses your previous contact-form styles */
+.contact-form-container {
+  /* optional additional styling */
+}
+
+/* Contact form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.contact-form label span {
+  color: #ffcc00;
+  margin-left: 3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 2px solid #ffcc00;
+  border-radius: 6px;
+  background-color: #222;
+  color: #f0e6d2;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
+}
+
+.contact-form button {
+  width: 160px;
+  align-self: flex-start;
+  background-color: #ffcc00;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: #e6b800;
+  outline: none;
+}
+
+/* Responsive tweaks for contact columns */
+@media (max-width: 768px) {
+  .contact-columns {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  .contact-info {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+}
