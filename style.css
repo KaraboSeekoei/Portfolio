@@ -205,10 +205,23 @@ footer {
   gap: 60px;
   max-width: 900px;
   margin: 40px auto 80px auto;
-  padding: 0 60px;
+  padding: 0 50px;
   font-family: 'Playfair Display', serif;
   color: #f0e6d2;
 }
+.contact-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 1.8s ease-out forwards;
+  margin-bottom: 20px; /* space between image and text */
+  display: inline-block;
+} 
 
 /* Left column with your contact details */
 .contact-info {
@@ -244,10 +257,7 @@ footer {
   text-decoration: underline;
 }
 
-/* Form container uses your previous contact-form styles */
-.contact-form-container {
-  /* optional additional styling */
-}
+
 
 /* Contact form styles */
 .contact-form {
