@@ -201,6 +201,7 @@ footer {
 /* New: Contact page two columns wrapper */
 .contact-columns {
   display: grid;
+  align-items: start;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
   max-width: 900px;
@@ -236,10 +237,7 @@ footer {
   margin-bottom: 20px;
   color: #ffcc00;
 }
-.no-left-line {
-  border-left: none !important;
-  padding-left: 0 !important;
-}
+
 
 
 .contact-info p {
@@ -299,12 +297,13 @@ footer {
 
 .contact-form button {
   width: 160px;
-  align-self: flex-start;
+  height: 50px;
+  /* align-self: flex-start; */
   background-color: #ffcc00;
   color: #222;
   border: none;
   border-radius: 6px;
-  padding: 12px 20px;
+  /* padding: 12px 20px; */
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
