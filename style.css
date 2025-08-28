@@ -173,10 +173,14 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-columns {
-    grid-template-columns: 1fr;
+  body {
+    font-size: 16px;
+  }
+  .container {
+    flex-direction: column;
   }
 }
+
 
 footer {
   background-color: #ffcc00; 
