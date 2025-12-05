@@ -19,7 +19,7 @@ jQuery, Bootstrap, Tkinter (for Python GUI)
 Git & GitHub, VS Code, StackBlitz
 
 ## **Projects**
-Queuing Machine
+**Queuing Machine**
 
 **Tech Used:** Python, Tkinter
 
