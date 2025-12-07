@@ -12,10 +12,20 @@
   </head>
   <body id="body">
     <div id="navigation-bar">
-      <a href="index.html">Home</a>
-      <a href="about_me.html">About</a>
-       <a href="contact_me.html">Contact</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about_me.html">About</a>
+        <a href="contact_me.html">Contact</a>
+      </div>
+      <!-- Theme dropdown on the right -->
+    <div class="theme-container">
+      <select id="theme-select">
+        <option value="dark">Dark Mode</option>
+        <option value="light">Light Mode</option>
+        <option value="colorblind">Color-Blind Mode</option>
+      </select>
     </div>
+  </div>
 
     <h1>About Me</h1>
     <h2>Web Developer | Software Engineer | Creative Thinker</h2>
@@ -73,6 +83,7 @@
     <footer>
       © 2025 Karabo Seekoei. All rights reserved.
     </footer>
+    <script src="validate-form.js"></script>
 
     
   </body>

@@ -11,60 +11,54 @@
   />
 </head>
 <body id="body">
+  <!-- Navigation Bar -->
   <div id="navigation-bar">
-    <a href="index.html">Home</a>
-    <a href="about_me.html">About</a>
-    <a href="contact_page.html">Contact</a>
-  </div>
-
-  <h1>Let’s Connect
-  <h2>Whether it's code or conversation—I'm just one message away.</h2>
-
-  <div class="contact-columns">
-    <!-- Left Column: Image + Contact Info -->
-    <div class="contact-info">
-      <div class="contact-image">
-        <img src="media/Untitled design.png" alt="Karabo Seekoei">
-      </div>
-
-      <h3 class="no-left-line">Reach out 👋</h3>
-
-      <p><strong>Email:</strong><br />
-        <a href="mailto:karaboprincess94@gmail.com">karaboprincess94@gmail.com</a>
-      </p>
-
-      <p><strong>LinkedIn:</strong><br />
-        <a href="https://www.linkedin.com/in/karabo-seekoei-a99110186" target="_blank">https://www.linkedin.com/in/karabo-seekoei-a99110186</a>
-      </p>
-
-      <p><strong>GitHub:</strong><br />
-        <a href="https://github.com/karaboseekoei" target="_blank">karaboseekoei</a>
-      </p>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about_me.html">About</a>
+      <a href="contact_me.html">Contact</a>
     </div>
 
-    <!-- Right Column: Contact Form -->
-    <div class="contact-form-container">
-      <form class="contact-form" action="#" method="POST">
-        <label for="name">Your Name<span>*</span></label>
-        <input type="text" id="name" name="name" placeholder="e.g. Amanda Mokoena" required />
+    <!-- Theme Selector -->
+    <div class="theme-container">
+      <select id="theme-select">
+        <option value="dark">Dark Mode</option>
+        <option value="light">Light Mode</option>
+        <option value="colorblind">Color-Blind Mode</option>
+      </select>
+    </div>
+  </div>
 
-        <label for="email">Your Email<span>*</span></label>
+  <!-- Page Header -->
+  <header class="contact-header">
+    <h1>Get in Touch</h1>
+    <h2>Have a question or idea? Let's chat!</h2>
+  </header>
+
+  <!-- Contact Form Card -->
+  <main class="contact-main">
+    <div class="contact-card">
+      <form class="contact-form" action="#" method="POST">
+        <label for="name">Name<span>*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="email">Email<span>*</span></label>
         <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
         <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="e.g. Collab idea, feedback, job opportunity" />
+        <input type="text" id="subject" name="subject" placeholder="Collab idea, feedback, job..." />
 
         <label for="message">Message<span>*</span></label>
-        <textarea id="message" name="message" rows="6" placeholder="Let’s build something amazing together..." required></textarea>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
 
         <button type="submit">Send Message</button>
-        
       </form>
     </div>
-  </div>
+  </main>
 
   <footer>
     © 2025 Karabo Seekoei. All rights reserved.
   </footer>
+  <script src="validate-form.js"></script>
 </body>
 </html>
