@@ -38,7 +38,7 @@
   <!-- Contact Form Card -->
   <main class="contact-main">
     <div class="contact-card">
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" id="contactForm" method="POST">
         <label for="name">Name<span>*</span></label>
         <input type="text" id="name" name="name" placeholder="Your Name" required />
 
@@ -52,6 +52,7 @@
         <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
 
         <button type="submit">Send Message</button>
+        <p id="formStatus" style="margin-top:10px;"></p>
       </form>
     </div>
   </main>
@@ -59,6 +60,7 @@
   <footer>
     © 2025 Karabo Seekoei. All rights reserved.
   </footer>
+
   <script src="validate-form.js"></script>
 </body>
 </html>
