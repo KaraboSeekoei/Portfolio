@@ -62,6 +62,8 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 60px;
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-links {
@@ -74,6 +76,7 @@ html, body {
   font-size: 20px;
   text-decoration: none;
   color: var(--nav-link-color);
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -87,6 +90,25 @@ html, body {
   border: 2px solid var(--accent-color);
   background-color: var(--input-bg);
   color: var(--input-text);
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-container select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Hamburger button */
+#nav-toggle {
+  display: none; /* desktop default */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--nav-link-color);
+  cursor: pointer;
+  z-index: 1100;
 }
 
 /* ================================
@@ -222,11 +244,12 @@ footer {
 }
 
 /* ================================
-   MOBILE ADAPTATION (SAFE)
+   MOBILE ADAPTATION
 ================================ */
 
 @media (max-width: 768px) {
 
+  /* General padding adjustments */
   #navigation-bar {
     padding: 1rem 20px;
   }
@@ -273,5 +296,32 @@ footer {
 
   .contact-form button {
     width: 100%;
+  }
+
+  /* MOBILE NAVIGATION FIX */
+  #nav-toggle {
+    display: block; /* show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
   }
 }

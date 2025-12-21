@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Karabo Seekoei</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body id="body">
-        <div id="navigation-bar">
-            <button id="nav-toggle">&#9776;</button> 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about_me.html">About</a>
-                <a href="contact_me.html">Contact</a>
-            </div>
+<head>
+    <title>Karabo Seekoei</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body id="body">
 
-        <!-- Theme dropdown on the right -->
+    <div id="navigation-bar">
+        <!-- Theme dropdown on the left -->
         <div class="theme-container">
             <select id="theme-select">
                 <option value="dark">Dark Mode</option>
@@ -24,22 +18,43 @@
                 <option value="colorblind">Color-Blind Mode</option>
             </select>
         </div>
-    </div>
-        <h1><b>Hello,</b> I'm Karabo Seekoei</h1>
-        <h2>Web Developer | Software Engineer | Creative Thinker</h2>
-        <div class="side-by-side">
-            <img src="media/Untitled design.png" alt="Karabo"/>
-            <p>
-                I am a web developer and software engineer with experience in both Python and Java. I’ve worked on backend services, REST APIs, and CLI-based applications. I focus on writing clean, reliable code and continually improving my technical skills. I enjoy building practical solutions and contributing to collaborative projects.
-            </p>
 
+        <!-- Hamburger button (mobile) -->
+        <button id="nav-toggle">&#9776;</button>
 
-
-
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about_me.html">About</a>
+            <a href="contact_me.html">Contact</a>
         </div>
-        <footer>
-            © 2025 Karabo Seekoei. All rights reserved.
-        </footer>
-        <script src="validate-form.js"></script>
-    </body>
+    </div>
+
+    <h1><b>Hello,</b> I'm Karabo Seekoei</h1>
+    <h2>Web Developer | Software Engineer | Creative Thinker</h2>
+
+    <div class="side-by-side">
+        <img src="media/Untitled design.png" alt="Karabo"/>
+        <p>
+            I am a web developer and software engineer with experience in both Python and Java. I’ve worked on backend services, REST APIs, and CLI-based applications. I focus on writing clean, reliable code and continually improving my technical skills. I enjoy building practical solutions and contributing to collaborative projects.
+        </p>
+    </div>
+
+    <footer>
+        © 2025 Karabo Seekoei. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="validate-form.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById('nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            toggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
 </html>
