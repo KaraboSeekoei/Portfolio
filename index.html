@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Karabo Seekoei</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Karabo Seekoei</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body id="body">
 
+    <!-- Navigation Bar -->
     <div id="navigation-bar">
-        <!-- Theme dropdown on the left -->
-        <div class="theme-container">
-            <select id="theme-select">
-                <option value="dark">Dark Mode</option>
-                <option value="light">Light Mode</option>
-                <option value="colorblind">Color-Blind Mode</option>
-            </select>
-        </div>
-
         <!-- Hamburger button (mobile) -->
         <button id="nav-toggle">&#9776;</button>
 
@@ -28,11 +20,22 @@
             <a href="about_me.html">About</a>
             <a href="contact_me.html">Contact</a>
         </div>
+
+        <!-- Theme dropdown on the right -->
+        <div class="theme-container">
+            <select id="theme-select">
+                <option value="dark">Dark Mode</option>
+                <option value="light">Light Mode</option>
+                <option value="colorblind">Color-Blind Mode</option>
+            </select>
+        </div>
     </div>
 
+    <!-- Page Header -->
     <h1><b>Hello,</b> I'm Karabo Seekoei</h1>
     <h2>Web Developer | Software Engineer | Creative Thinker</h2>
 
+    <!-- Hero Section -->
     <div class="side-by-side">
         <img src="media/Untitled design.png" alt="Karabo"/>
         <p>
@@ -46,15 +49,5 @@
 
     <!-- Scripts -->
     <script src="validate-form.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggle = document.getElementById('nav-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            toggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
