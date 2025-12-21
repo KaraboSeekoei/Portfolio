@@ -170,10 +170,45 @@ h2 {
 ================================ */
 
 .about-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex; /* use flex instead of grid */
+  flex-wrap: wrap;
   gap: 40px;
   padding: 60px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 2 1 300px;
+  line-height: 1.6;
+}
+
+.about-stats {
+  flex: 1 1 200px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Vertical divider for desktop */
+@media (min-width: 769px) {
+  .about-stats::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--accent-color);
+  }
+}
+
+/* Mobile: stack below text, hide line */
+@media (max-width: 768px) {
+  .about-columns {
+    flex-direction: column;
+  }
+  .about-stats::before {
+    display: none;
+  }
 }
 
 .tech-stack-icons {
@@ -186,10 +221,6 @@ h2 {
 .tech-stack-icons img {
   width: 50px;
   height: 50px;
-}
-
-.about-text {
-  line-height: 1.6;
 }
 
 .about-stats {
@@ -249,7 +280,6 @@ footer {
 
 @media (max-width: 768px) {
 
-  /* General padding adjustments */
   #navigation-bar {
     padding: 1rem 20px;
   }
@@ -275,7 +305,6 @@ footer {
   }
 
   .about-columns {
-    grid-template-columns: 1fr;
     padding: 40px 20px;
   }
 
@@ -298,9 +327,9 @@ footer {
     width: 100%;
   }
 
-  /* MOBILE NAVIGATION FIX */
+  /* MOBILE NAVIGATION */
   #nav-toggle {
-    display: block; /* show hamburger on mobile */
+    display: block;
   }
 
   .nav-links {
