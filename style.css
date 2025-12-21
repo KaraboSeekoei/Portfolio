@@ -36,7 +36,7 @@
 }
 
 /* ================================
-   GLOBAL SAFETY
+   GLOBAL STYLES
 ================================ */
 
 * {
@@ -51,6 +51,8 @@ html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* ================================
@@ -100,9 +102,8 @@ html, body {
   box-shadow: 0 0 5px var(--accent-color);
 }
 
-/* Hamburger button */
 #nav-toggle {
-  display: none; /* desktop default */
+  display: none; /* Desktop default */
   font-size: 2rem;
   background: none;
   border: none;
@@ -139,7 +140,7 @@ h2 {
 }
 
 /* ================================
-   HERO SECTION
+   HERO / ABOUT SECTIONS
 ================================ */
 
 .side-by-side {
@@ -165,50 +166,11 @@ h2 {
   line-height: 1.7;
 }
 
-/* ================================
-   ABOUT SECTION
-================================ */
-
 .about-columns {
-  display: flex; /* use flex instead of grid */
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 60px;
-  align-items: flex-start;
-}
-
-.about-text {
-  flex: 2 1 300px;
-  line-height: 1.6;
-}
-
-.about-stats {
-  flex: 1 1 200px;
-  position: relative;
-  padding-left: 20px;
-}
-
-/* Vertical divider for desktop */
-@media (min-width: 769px) {
-  .about-stats::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background-color: var(--accent-color);
-  }
-}
-
-/* Mobile: stack below text, hide line */
-@media (max-width: 768px) {
-  .about-columns {
-    flex-direction: column;
-  }
-  .about-stats::before {
-    display: none;
-  }
 }
 
 .tech-stack-icons {
@@ -223,6 +185,10 @@ h2 {
   height: 50px;
 }
 
+.about-text {
+  line-height: 1.6;
+}
+
 .about-stats {
   display: flex;
   flex-direction: column;
@@ -233,22 +199,11 @@ h2 {
    CONTACT
 ================================ */
 
-.contact-container {
-  max-width: 600px;
-  margin: 40px auto 80px;
-  padding: 0 60px;
-}
-
-.contact-columns {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  padding: 0 50px;
-}
-
-.contact-info {
-  border-right: 4px solid var(--accent-color);
-  padding-left: 20px;
+.contact-container,
+.contact-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .contact-form {
@@ -257,9 +212,47 @@ h2 {
   gap: 15px;
 }
 
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--input-text);
+  opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
 .contact-form button {
-  width: 160px;
-  height: 50px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--nav-link-color);
+  color: var(--accent-color);
 }
 
 /* ================================
@@ -280,6 +273,7 @@ footer {
 
 @media (max-width: 768px) {
 
+  /* General padding adjustments */
   #navigation-bar {
     padding: 1rem 20px;
   }
@@ -305,10 +299,12 @@ footer {
   }
 
   .about-columns {
+    grid-template-columns: 1fr;
     padding: 40px 20px;
   }
 
-  .contact-container {
+  .contact-container,
+  .contact-card {
     padding: 0 20px;
   }
 
@@ -317,17 +313,7 @@ footer {
     padding: 0 20px;
   }
 
-  .contact-info {
-    border-right: none;
-    padding-left: 0;
-    margin-bottom: 30px;
-  }
-
-  .contact-form button {
-    width: 100%;
-  }
-
-  /* MOBILE NAVIGATION */
+  /* Mobile nav */
   #nav-toggle {
     display: block;
   }
