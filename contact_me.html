@@ -13,17 +13,12 @@
 <body id="body">
   <!-- Navigation Bar -->
   <div id="navigation-bar">
-    <!-- Hamburger button (mobile, left) -->
     <button id="nav-toggle">&#9776;</button>
-
-    <!-- Navigation links -->
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about_me.html">About</a>
       <a href="contact_me.html">Contact</a>
     </div>
-
-    <!-- Theme Selector (right) -->
     <div class="theme-container">
       <select id="theme-select">
         <option value="dark">Dark Mode</option>
@@ -42,7 +37,7 @@
   <!-- Contact Form Card -->
   <main class="contact-main">
     <div class="contact-card">
-      <form class="contact-form" id="contactForm" method="POST">
+      <form class="contact-form" id="contactForm">
         <label for="name">Name<span>*</span></label>
         <input type="text" id="name" name="name" placeholder="Your Name" required />
 
@@ -65,7 +60,10 @@
     © 2025 Karabo Seekoei. All rights reserved.
   </footer>
 
-  <!-- JS -->
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Your JS -->
   <script src="validate-form.js"></script>
 </body>
 </html>

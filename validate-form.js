@@ -1,18 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // ==========================
+  // Hamburger toggle (all pages)
+  // ==========================
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // ==========================
+  // Theme toggle (all pages)
+  // ==========================
+  const themeSelect = document.getElementById("theme-select");
+  if (themeSelect) {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.setAttribute("data-theme", savedTheme);
+    themeSelect.value = savedTheme;
+
+    themeSelect.addEventListener("change", () => {
+      const theme = themeSelect.value;
+      document.body.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    });
+  }
+
+  // ==========================
+  // Initialize EmailJS
+  // ==========================
+  emailjs.init("AqMCnZ3ZBofHJuVRQ"); // your public key
+
+  // ==========================
+  // Contact Form (if exists)
+  // ==========================
   const form = document.getElementById("contactForm");
   if (!form) return;
 
   const status = document.getElementById("formStatus");
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
+  const subjectInput = document.getElementById("subject");
   const messageInput = document.getElementById("message");
   const submitButton = form.querySelector("button[type='submit']");
 
-  const touched = {
-    name: false,
-    email: false,
-    message: false
-  };
+  const touched = { name: false, email: false, message: false };
 
   function createError(input) {
     let span = input.nextElementSibling;
@@ -35,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-    switch(type) {
+    switch (type) {
       case "name":
         const namePattern = /^[A-Z][a-z]+\s[A-Z][a-z]+(\s[A-Z][a-z]+)*$/;
         if (value === "") { errorSpan.textContent = "Please enter your full name."; return false; }
@@ -43,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
 
       case "email":
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // general email check
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (value === "") { errorSpan.textContent = "Please enter your email."; return false; }
-        if (!emailPattern.test(value)) { errorSpan.textContent = "Enter a valid email address. E.g john@gmail.com"; return false; }
+        if (!emailPattern.test(value)) { errorSpan.textContent = "Enter a valid email address."; return false; }
         break;
 
       case "message":
@@ -61,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const validName = validateField(nameInput, "name");
     const validEmail = validateField(emailInput, "email");
     const validMessage = validateField(messageInput, "message");
-
     submitButton.disabled = !(validName && validEmail && validMessage);
   }
 
@@ -73,20 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
   validateForm();
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // prevent page reload
     status.textContent = "Sending message...";
-    const formData = new FormData(form);
-    fetch("http://localhost:5000/contact", { method: "POST", body: formData })
-      .then(res => res.text())
-      .then(data => {
-        status.textContent = data;
-        form.reset();
-        Object.keys(touched).forEach(k => touched[k] = false);
-        validateForm();
-      })
-      .catch(err => {
-        status.textContent = "Error sending message. Try again later.";
-        console.error(err);
-      });
+
+    emailjs.send("service_pn155uf", "template_h5in08m", {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      subject: subjectInput.value.trim() || "No subject",
+      message: messageInput.value.trim()
+    })
+    .then(() => {
+      status.textContent = "Message sent successfully!";
+      form.reset();
+      Object.keys(touched).forEach(k => touched[k] = false);
+      validateForm();
+    })
+    .catch(err => {
+      console.error(err);
+      status.textContent = "Error sending message. Try again later.";
+    });
   });
 });
