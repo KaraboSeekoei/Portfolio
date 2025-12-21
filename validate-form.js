@@ -43,6 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  //NAV TOGGLE BARS
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // show/hide links
+  });
   // THEME TOGGLE
   const themeSelect = document.getElementById("theme-select");
   if (themeSelect) {
