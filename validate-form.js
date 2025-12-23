@@ -107,20 +107,30 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault(); // prevent page reload
     status.textContent = "Sending message...";
 
+    // ==========================
+    // Debug logs to test JS & EmailJS
+    // ==========================
+    console.log("Form submitted!");
+    console.log("Name:", nameInput.value);
+    console.log("Email:", emailInput.value);
+    console.log("Subject:", subjectInput.value.trim() || "No subject");
+    console.log("Message:", messageInput.value);
+
     emailjs.send("service_pn155uf", "template_h5in08m", {
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
       subject: subjectInput.value.trim() || "No subject",
       message: messageInput.value.trim()
     })
-    .then(() => {
+    .then((response) => {
+      console.log("EmailJS response:", response);
       status.textContent = "Message sent successfully!";
       form.reset();
       Object.keys(touched).forEach(k => touched[k] = false);
       validateForm();
     })
-    .catch(err => {
-      console.error(err);
+    .catch((err) => {
+      console.error("EmailJS error:", err);
       status.textContent = "Error sending message. Try again later.";
     });
   });
