@@ -189,10 +189,43 @@ h2 {
   line-height: 1.6;
 }
 
+/* ================================
+   ABOUT STATS - YELLOW THEME
+================================ */
+
 .about-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-stats .stat {
+  background-color: var(--card-bg);
+  border-left: 6px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 15px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-stats .stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+.about-stats .stat strong {
+  color: var(--accent-color);
+  font-size: 1.05rem;
+}
+
+.about-stats .stat ul {
+  margin: 5px 0 0 15px;
+  padding: 0;
+}
+
+.about-stats .stat ul li {
+  margin: 3px 0;
+  list-style-type: disc;
+  color: var(--text-color);
 }
 
 /* ================================
@@ -338,5 +371,9 @@ footer {
 
   .nav-links a {
     padding: 10px 0;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr; /* stack stats on mobile */
   }
 }
