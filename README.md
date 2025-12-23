@@ -1,47 +1,55 @@
-# **Karabo Seekoei – Personal Portfolio**
+# About Karabo Seekoei Portfolio
 
-This repository contains my personal portfolio website, serving as an interactive resume to showcase my skills, background, and projects for professional opportunities.
+Welcome to my personal portfolio website! This project showcases my skills as a Web Developer, Software Engineer, and Creative Thinker. Here, you can explore my experience, tools I work with, projects I’ve built, and how to get in touch.
 
-## **About Me**
+## Features 
 
-I am Karabo Seekoei, a software engineer specializing in front-end development.
-This portfolio highlights who I am, my technical abilities, and the projects I have worked on, providing recruiters and collaborators with a clear overview of my experience and skills.
+About Me Section: Learn about my journey into tech and what drives me.
 
-## **Skills**
+**Tech Stack Showcase:** Icons highlighting programming languages, frameworks, and tools I’m proficient in.
 
-Programming Languages:
-HTML, CSS, JavaScript, Java, Python
+**Stats Cards:** Tabulated overview of my skills, education, project types, and more with a yellow-themed design.
 
-## **Frameworks / Libraries:**
-jQuery, Bootstrap, Tkinter (for Python GUI)
+**Contact Form:** Reach out to me directly for opportunities or inquiries.
 
-## **Tools:**
-Git & GitHub, VS Code, StackBlitz
+**Theme Switcher:** Toggle between Dark Mode, Light Mode, and Color-Blind Mode for accessibility.
 
-## **Projects**
-**Queuing Machine**
+## Technologies Used
 
-**Tech Used:** Python, Tkinter
+**Frontend:** HTML5, CSS3, JavaScript
 
-**Description:** A tool for institutions that helps students avoid queues. It displays departments, the people responsible, and their office locations. (Currently under development)
+**Frameworks / Tools:** DevIcons for tech icons, Playfair Display Google Font
 
-**Live Link:** To be deployed
+**Design:** Responsive layout, mobile-friendly, and theme support
 
-**GitHub:** [Queuing Machine](https://github.com/KaraboSeekoei/queuing_machine)
+## Project Structure
+/
+├── index.html
+├── about_me.html
+├── contact_me.html
+├── style.css
+├── validate-form.js
+└── assets/
 
 
-## **Future Improvements**
 
-Enhance the Queuing Machine with prompting features so users can enter specific details and receive personalized guidance.
+**HTML Files:** Structure of the website pages.
 
-Add more projects to the portfolio as I continue building my skills and completing assignments.
+**CSS File:** Styling for the website, including themes and yellow stats layout.
 
-## **Contact**
+**JavaScript:** Form validation and interactive elements.
 
-**Email:** karaboprincess94@gmail.com
+**Assets:** Icons, images, or additional files used in the website.
 
-**LinkedIn:** Karabo Seekoei
+## How to View:
 
-## **License**
+1. Clone or download the repository to your local machine.
 
-This project is open-source and available under the MIT License.
+2. Open index.html or about_me.html in your browser. 
+3. View the live deployed website here: https://karaboseekoei.github.io/Portfolio/index.html
+
+Note: The GitHub link in the stats section is currently not working. If you’d like to see the repository or discuss opportunities, you can contact me via the contact form, and I’ll gladly share the link.
+
+## Contact Me
+
+Use the contact form on the website to reach out. Whether you’re interested in hiring, collaborating, or just saying hi, I’d love to hear from you.
