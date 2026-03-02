@@ -46,7 +46,7 @@ About Me Section: Learn about my journey into tech and what drives me.
 1. Clone or download the repository to your local machine.
 
 2. Open index.html or about_me.html in your browser. 
-3. View the live deployed website here: https://karaboseekoei.github.io/Portfolio/index.html
+3. View the live deployed website here: https://karaboseekoei.github.io/Portfolio/
 
 Note: The GitHub link in the stats section is currently not working. If you’d like to see the repository or discuss opportunities, you can contact me via the contact form, and I’ll gladly share the link.
 
