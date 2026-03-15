@@ -48,6 +48,22 @@ About Me Section: Learn about my journey into tech and what drives me.
 2. Open index.html or about_me.html in your browser. 
 3. View the live deployed website here: https://karaboseekoei.github.io/Portfolio/
 
+
+## Running with Docker
+
+If you want to run this portfolio locally using Docker (with an Nginx server), follow these steps:
+
+### 1. Pull the Docker image from Docker Hub
+```bash
+docker pull karaboseekoei/portfolio:latest
+```
+### 2. Run the container
+```bash
+docker run -p 8080:80 karaboseekoei/portfolio:latest
+```
+### 3. Open your browser and go to http://localhost:8080 to see the portfolio running.
+
+
 Note: The GitHub link in the stats section is currently not working. If you’d like to see the repository or discuss opportunities, you can contact me via the contact form, and I’ll gladly share the link.
 
 ## Contact Me
